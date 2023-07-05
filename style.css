@@ -34,10 +34,11 @@
     margin-bottom: 20px;
   }
   
-  .profile img {
+  .profilexie {
     max-width: 200px;
     border-radius: 50%;
-    margin-right: 20px;
+    justify-content:center;
+    align-items:center;
   }
   
   .details {
@@ -57,7 +58,6 @@
       flex-basis: 100%;
     }
   }
-
 
 
   /* carousel */
