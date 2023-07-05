@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Biografi Tokoh</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="profile">
+      <img src="img/xie/xie.jpg" alt="Gambar Tokoh">
+      <div class="details">
+        <h2>Xie Chu Ling</h2>
+        <p>Tanggal Lahir: 24/Juni/2004</p>
+        <p>Chengdu, Sichuan, China</p>
+        <p>Chengdu University Of Chinese Traditional Medicine.</p>
+      </div>
+    </div>
+
+    <div class="achievements">
+      <h3>Media Sosial </h3>
+      <div>
+        <p>Douyin: <a
+            href="https://www.douyin.com/user/MS4wLjABAAAALK15ylKOfoJpXG8Z61u5nxxDkqS5eznbA_8wWZgPPfU">xcl0624_</a></p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="carousel">
+    <div class="carousel-container">
+      <div class="carousel-item">
+        <img src="img/xie/1.jpg" alt="Gambar 1">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/2.jpg" alt="Gambar 2">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/3.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/4.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/5.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/6.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/7.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/8.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/9.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/10.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/11.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/12.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/13.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/14.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/15.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/16.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/17.jpg" alt="Gambar 3">
+      </div>
+      <div class="carousel-item">
+        <img src="img/xie/18.jpg" alt="Gambar 3">
+      </div>
+    </div>
+    <a class="carousel-prev">&#10094;</a>
+    <a class="carousel-next">&#10095;</a>
+  </div>
+
+
+
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const carouselContainer = document.querySelector(".carousel-container");
+      const carouselItems = document.querySelectorAll(".carousel-item");
+      const prevButton = document.querySelector(".carousel-prev");
+      const nextButton = document.querySelector(".carousel-next");
+      const itemWidth = carouselItems[0].offsetWidth;
+      const itemCount = carouselItems.length;
+      let currentPosition = 0;
+
+      prevButton.addEventListener("click", function () {
+        currentPosition = Math.max(currentPosition - 1, 0);
+        carouselContainer.style.transform = `translateX(-${currentPosition * itemWidth}px)`;
+      });
+
+      nextButton.addEventListener("click", function () {
+        currentPosition = Math.min(currentPosition + 1, itemCount - 1);
+        carouselContainer.style.transform = `translateX(-${currentPosition * itemWidth}px)`;
+      });
+    });
+
+    window.addEventListener("resize", function () {
+      const carouselItems = document.querySelectorAll(".carousel-item");
+      const itemWidth = carouselItems[0].offsetWidth;
+      const carouselContainer = document.querySelector(".carousel-container");
+      const currentPosition = Math.min(Math.floor(carouselContainer.scrollLeft / itemWidth), carouselItems.length - 1);
+      carouselContainer.style.transform = `translateX(-${currentPosition * itemWidth}px)`;
+    });
+
+  </script>
+</body>
+
+</html>
